@@ -93,7 +93,7 @@ export default function Home() {
                 <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-blue-400 to-blue-300 opacity-20 blur-xl"></div>
                 <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow-2xl overflow-hidden border border-white/20 dark:border-gray-700/20">
                   <AnimatedImage
-                    src="/placeholder.svg?height=400&width=600"
+                    src="/hero-developer.jpg"
                     width={600}
                     height={400}
                     alt="Professional developer working on laptop - web development services"
@@ -728,7 +728,7 @@ export default function Home() {
                 <div className="absolute -inset-4 rounded-xl bg-gradient-to-r from-blue-100 to-blue-50 dark:from-blue-900/20 dark:to-blue-800/20 opacity-50 blur-xl"></div>
                 <div className="relative">
                   <AnimatedImage
-                    src="/about-image.jpg"
+                    src="/about-team.jpg"
                     width={600}
                     height={400}
                     alt="About our web development team"

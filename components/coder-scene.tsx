@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Code, Monitor, Smartphone, Globe, Zap, Coffee } from "lucide-react"
+import { motion } from "framer-motion"
 
 // Animated Code Lines Component with falling letters
 function AnimatedCodeLines() {
@@ -280,7 +281,6 @@ function ProjectShowcase() {
 // Main CoderScene Component
 export function CoderScene() {
   const [isClient, setIsClient] = useState(false)
-
   useEffect(() => {
     setIsClient(true)
   }, [])
@@ -301,27 +301,108 @@ export function CoderScene() {
       <FloatingIcons />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6 h-full">
-        {/* Developer Avatar */}
-        <div className="flex items-center justify-center">
+        {/* Developer Avatar - Falls first */}
+        <motion.div
+          className="flex items-center justify-center"
+          initial={{
+            y: -200,
+            opacity: 0,
+            scale: 0.8,
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            scale: 1,
+          }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{
+            type: "spring",
+            damping: 12,
+            stiffness: 100,
+            duration: 0.8,
+            delay: 0,
+          }}
+          whileHover={{
+            scale: 1.05,
+            rotate: 2,
+            transition: { duration: 0.2 },
+          }}
+        >
           <DeveloperAvatar />
-        </div>
+        </motion.div>
 
-        {/* Code Editor */}
-        <div className="flex items-center justify-center">
+        {/* Code Editor - Falls second (1 second delay) */}
+        <motion.div
+          className="flex items-center justify-center"
+          initial={{
+            y: -200,
+            opacity: 0,
+            scale: 0.8,
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            scale: 1,
+          }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{
+            type: "spring",
+            damping: 12,
+            stiffness: 100,
+            duration: 0.8,
+            delay: 1.0,
+          }}
+          whileHover={{
+            scale: 1.02,
+            rotate: -1,
+            transition: { duration: 0.2 },
+          }}
+        >
           <AnimatedCodeLines />
-        </div>
+        </motion.div>
 
-        {/* Project Showcase */}
-        <div className="flex items-center justify-center">
+        {/* Project Showcase - Falls third (2 second delay) */}
+        <motion.div
+          className="flex items-center justify-center"
+          initial={{
+            y: -200,
+            opacity: 0,
+            scale: 0.8,
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            scale: 1,
+          }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{
+            type: "spring",
+            damping: 12,
+            stiffness: 100,
+            duration: 0.8,
+            delay: 2.0,
+          }}
+          whileHover={{
+            scale: 1.03,
+            rotate: -2,
+            transition: { duration: 0.2 },
+          }}
+        >
           <ProjectShowcase />
-        </div>
+        </motion.div>
       </div>
 
       {/* Interactive Instructions */}
-      <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-3 text-sm text-gray-600 dark:text-gray-300">
+      <motion.div
+        className="absolute bottom-4 left-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-3 text-sm text-gray-600 dark:text-gray-300"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 3.0, duration: 0.5 }}
+      >
         <p className="font-medium mb-1">🚀 Live Development Process</p>
         <p>Watch as we build your website step by step!</p>
-      </div>
+      </motion.div>
     </div>
   )
 }
