@@ -223,7 +223,7 @@ export function ContactForm() {
                     </div>
                     <div>
                       <h4 className="font-medium text-gray-900 dark:text-gray-100">Phone</h4>
-                      <p className="text-gray-600 dark:text-gray-400">+91 98765 43210</p>
+                      <p className="text-gray-600 dark:text-gray-400">7807803780</p>
                       <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">Monday to Friday, 9am to 6pm</p>
                     </div>
                   </div>

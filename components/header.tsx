@@ -123,9 +123,12 @@ export function Header() {
               variant="outline"
               size="sm"
               className="rounded-full border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+              asChild
             >
-              <Phone className="mr-2 h-4 w-4" />
-              Call Now
+              <a href="tel:7807803780">
+                <Phone className="mr-2 h-4 w-4" />
+                Call Now
+              </a>
             </Button>
             <Button
               size="sm"
@@ -228,9 +231,12 @@ export function Header() {
                     variant="outline"
                     size="sm"
                     className="justify-start border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300"
+                    asChild
                   >
-                    <Phone className="mr-2 h-4 w-4" />
-                    Call Now
+                    <a href="tel:7807803780">
+                      <Phone className="mr-2 h-4 w-4" />
+                      Call Now
+                    </a>
                   </Button>
                   <Button
                     size="sm"
