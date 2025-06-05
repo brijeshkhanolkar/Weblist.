@@ -130,8 +130,9 @@ export function Header() {
             <Button
               size="sm"
               className="rounded-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 border-0"
+              asChild
             >
-              Get Free Demo
+              <a href="#contact">Get Your Website Now</a>
             </Button>
           </div>
 
@@ -234,8 +235,9 @@ export function Header() {
                   <Button
                     size="sm"
                     className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 border-0"
+                    asChild
                   >
-                    Get Free Demo
+                    <a href="#contact">Get Your Website Now</a>
                   </Button>
                 </div>
               </li>
