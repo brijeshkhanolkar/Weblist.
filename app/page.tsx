@@ -55,7 +55,7 @@ export default function Home() {
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </AnimatedButton>
                   <WhatsAppButton
-                    phoneNumber="7807803780"
+                    phoneNumber="+917807803780"
                     message="Hi! I'm interested in getting a website for my business. Can you help?"
                     size="lg"
                     variant="outline"
@@ -222,7 +222,7 @@ export default function Home() {
                 </CardContent>
                 <CardFooter className="border-t border-gray-200 dark:border-gray-700 pt-4">
                   <WhatsAppButton
-                    phoneNumber="7807803780"
+                    phoneNumber="+917807803780"
                     message="Hi! I'm interested in your Single Page Website package. Can you provide more details?"
                     className="w-full rounded-full text-white"
                   />
@@ -243,7 +243,7 @@ export default function Home() {
                 </CardContent>
                 <CardFooter className="border-t border-gray-200 dark:border-gray-700 pt-4">
                   <WhatsAppButton
-                    phoneNumber="7807803780"
+                    phoneNumber="+917807803780"
                     message="Hi! I'm interested in your 3-5 Page Business Website package. Can you provide more details?"
                     className="w-full rounded-full text-white"
                   />
@@ -263,7 +263,7 @@ export default function Home() {
                 </CardContent>
                 <CardFooter className="border-t border-gray-200 dark:border-gray-700 pt-4">
                   <WhatsAppButton
-                    phoneNumber="7807803780"
+                    phoneNumber="+917807803780"
                     message="Hi! I'm interested in your E-commerce Website package. Can you provide more details?"
                     className="w-full rounded-full text-white"
                   />
@@ -284,7 +284,7 @@ export default function Home() {
                 </CardContent>
                 <CardFooter className="border-t border-gray-200 dark:border-gray-700 pt-4">
                   <WhatsAppButton
-                    phoneNumber="7807803780"
+                    phoneNumber="+917807803780"
                     message="Hi! I'm interested in adding WhatsApp & Call Buttons to my website. Can you provide more details?"
                     className="w-full rounded-full text-white"
                   />
@@ -352,7 +352,7 @@ export default function Home() {
                 </CardContent>
                 <CardFooter>
                   <WhatsAppButton
-                    phoneNumber="7807803780"
+                    phoneNumber="+917807803780"
                     message="Hi! I'm interested in your Basic Website package for ₹22,000. Can we discuss the details?"
                     className="w-full rounded-full text-white"
                   >
@@ -404,7 +404,7 @@ export default function Home() {
                 </CardContent>
                 <CardFooter>
                   <WhatsAppButton
-                    phoneNumber="7807803780"
+                    phoneNumber="+917807803780"
                     message="Hi! I'm interested in your Standard Website package for ₹40,000. Can we discuss the details?"
                     className="w-full bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 rounded-full text-white"
                   >
@@ -455,7 +455,7 @@ export default function Home() {
                 </CardContent>
                 <CardFooter>
                   <WhatsAppButton
-                    phoneNumber="7807803780"
+                    phoneNumber="+917807803780"
                     message="Hi! I'm interested in your Premium Website package for ₹55,000. Can we discuss the details?"
                     className="w-full rounded-full text-white"
                   >
@@ -1078,7 +1078,7 @@ export default function Home() {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </AnimatedButton>
               <WhatsAppButton
-                phoneNumber="7807803780"
+                phoneNumber="+917807803780"
                 message="Hi! I'd like to discuss my website project. Can we talk?"
                 size="lg"
                 variant="outline"
@@ -1206,7 +1206,7 @@ export default function Home() {
       </footer>
       {/* Floating WhatsApp Button */}
       <WhatsAppButton
-        phoneNumber="7807803780"
+        phoneNumber="+917807803780"
         message="Hello! I'm interested in your web development services. Can you help me?"
         floating
       />
