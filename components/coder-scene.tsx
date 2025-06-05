@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react"
 import { Code, Monitor, Smartphone, Globe, Zap, Coffee } from "lucide-react"
 
-// Animated Code Lines Component
+// Animated Code Lines Component with falling letters
 function AnimatedCodeLines() {
-  const [currentLine, setCurrentLine] = useState(0)
+  const [activeLineIndex, setActiveLineIndex] = useState(0)
+  const [visibleChars, setVisibleChars] = useState<{ [key: number]: number }>({})
 
   const codeLines = [
     "const website = new Website();",
@@ -17,30 +18,120 @@ function AnimatedCodeLines() {
   ]
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentLine((prev) => (prev + 1) % codeLines.length)
-    }, 2000)
-    return () => clearInterval(interval)
+    // Handle line progression
+    const intervalId = setInterval(() => {
+      setActiveLineIndex((prev) => {
+        const next = (prev + 1) % codeLines.length
+        // Reset visible characters when we start a new cycle
+        if (next === 0) setVisibleChars({})
+        return next
+      })
+    }, 4000)
+
+    return () => clearInterval(intervalId)
   }, [])
 
+  useEffect(() => {
+    // Handle character progression for current line
+    const intervalId = setInterval(() => {
+      setVisibleChars((prev) => {
+        const currentVisible = prev[activeLineIndex] || 0
+        const lineLength = codeLines[activeLineIndex].length
+
+        if (currentVisible >= lineLength) {
+          return prev
+        }
+
+        return {
+          ...prev,
+          [activeLineIndex]: currentVisible + 1,
+        }
+      })
+    }, 100)
+
+    return () => clearInterval(intervalId)
+  }, [activeLineIndex])
+
   return (
-    <div className="bg-gray-900 rounded-lg p-6 font-mono text-sm">
+    <div className="bg-gray-900 rounded-lg p-6 font-mono text-sm relative overflow-hidden h-80">
+      <style jsx>{`
+        @keyframes fall {
+          0% {
+            transform: translateY(-100px);
+            opacity: 0;
+          }
+          50% {
+            opacity: 0.8;
+          }
+          100% {
+            transform: translateY(400px);
+            opacity: 0;
+          }
+        }
+        .animate-fall {
+          animation: fall 3s linear infinite;
+        }
+      `}</style>
+
       <div className="flex items-center gap-2 mb-4">
         <div className="w-3 h-3 rounded-full bg-red-500"></div>
         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
         <div className="w-3 h-3 rounded-full bg-green-500"></div>
         <span className="text-gray-400 ml-2">WebList - Building your website...</span>
       </div>
-      <div className="space-y-2">
-        {codeLines.map((line, index) => (
+
+      <div className="relative h-64">
+        {/* Matrix-like falling characters in background */}
+        {Array.from({ length: 20 }).map((_, i) => (
           <div
-            key={index}
-            className={`transition-all duration-500 ${
-              index <= currentLine ? "text-green-400 opacity-100" : "text-gray-600 opacity-50"
-            }`}
+            key={`rain-${i}`}
+            className="absolute text-green-500 opacity-30"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: "-20px",
+              animation: `fall ${2 + Math.random() * 3}s linear infinite`,
+              animationDelay: `${Math.random() * 5}s`,
+              fontSize: `${Math.random() * 8 + 10}px`,
+            }}
           >
-            <span className="text-blue-400">{">"}</span> {line}
-            {index === currentLine && <span className="animate-pulse text-green-400">|</span>}
+            {["0", "1", "{", "}", "(", ")", ";", "=", "<", ">", "/", "*"][Math.floor(Math.random() * 12)]}
+          </div>
+        ))}
+
+        {/* Code lines with falling characters */}
+        {codeLines.map((line, lineIndex) => (
+          <div
+            key={`line-${lineIndex}`}
+            className={`absolute left-0 transition-all duration-500 ${
+              lineIndex <= activeLineIndex ? "opacity-100" : "opacity-30"
+            }`}
+            style={{
+              top: `${lineIndex * 35}px`,
+            }}
+          >
+            <span className="text-blue-400">{">"}</span>{" "}
+            <span className="text-green-400">
+              {line.split("").map((char, charIndex) => {
+                const isVisible = (visibleChars[lineIndex] || 0) > charIndex
+                const isCurrentChar = (visibleChars[lineIndex] || 0) === charIndex + 1
+                return (
+                  <span
+                    key={`char-${lineIndex}-${charIndex}`}
+                    className={`inline-block transition-all duration-200 ${
+                      isVisible ? "opacity-100 transform translate-y-0" : "opacity-0 transform -translate-y-8"
+                    } ${isCurrentChar ? "text-white bg-green-500" : ""}`}
+                    style={{
+                      transitionDelay: `${charIndex * 30}ms`,
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                )
+              })}
+            </span>
+            {lineIndex === activeLineIndex && (visibleChars[lineIndex] || 0) >= line.length && (
+              <span className="animate-pulse text-green-400 ml-1">|</span>
+            )}
           </div>
         ))}
       </div>
