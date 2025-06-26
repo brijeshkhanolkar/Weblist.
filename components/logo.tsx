@@ -18,12 +18,25 @@ export function Logo({ isScrolled = false }: LogoProps) {
       >
         <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
         <div className="h-full w-full flex items-center justify-center">
-          <Image src="/logo.png" alt="WebList Logo" width={24} height={24} className="h-6 w-6 object-contain" />
+          <Image
+            src="/weblistt-logo.png"
+            alt="WebListt Logo"
+            width={32}
+            height={32}
+            className="h-8 w-8 object-contain"
+          />
         </div>
       </div>
       <div className={cn("font-bold transition-all duration-300", isScrolled ? "text-lg" : "text-xl")}>
-        <span className="text-blue-600 dark:text-blue-400">Web</span>
-        <span className={isScrolled ? "text-gray-800 dark:text-gray-200" : "text-white"}>List</span>
+        <span className="text-blue-600 dark:text-blue-400">WebList</span>
+        <span
+          className={cn(
+            "text-cyan-500 dark:text-cyan-400",
+            isScrolled ? "text-gray-800 dark:text-gray-200" : "text-white",
+          )}
+        >
+          T
+        </span>
       </div>
     </Link>
   )

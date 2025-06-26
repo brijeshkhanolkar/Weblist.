@@ -875,7 +875,7 @@ export default function Home() {
                 <CardHeader>
                   <div className="flex items-center gap-4">
                     <AnimatedImage
-                      src="/testimonials/client-2.jpg"
+                      src="/testimonials/client-2-indian.jpg"
                       width={50}
                       height={50}
                       alt="Priya Patel"
@@ -909,7 +909,7 @@ export default function Home() {
                 <CardHeader>
                   <div className="flex items-center gap-4">
                     <AnimatedImage
-                      src="/testimonials/client-3.jpg"
+                      src="/testimonials/client-3-indian.jpg"
                       width={50}
                       height={50}
                       alt="Anjali Desai"
