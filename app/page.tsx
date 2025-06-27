@@ -450,14 +450,18 @@ export default function Home() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <WhatsAppButton
-                    phoneNumber="917807803780"
-                    message="Hi! I'm interested in your Standard Website package for ₹40,000. Can we discuss the details?"
+                  <Button
+                    onClick={() => {
+                      const message =
+                        "Hi! I'm interested in your Standard Website package for ₹40,000. Can we discuss the details?"
+                      const whatsappUrl = `https://wa.me/917807803780?text=${encodeURIComponent(message)}`
+                      window.open(whatsappUrl, "_blank")
+                    }}
                     className="w-full bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 rounded-full text-white border-0"
                     size="default"
                   >
                     Start Now
-                  </WhatsAppButton>
+                  </Button>
                 </CardFooter>
               </Card>
             </AnimatedSection>
