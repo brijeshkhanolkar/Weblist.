@@ -375,7 +375,8 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="flex-1">
                   <div className="text-4xl font-bold text-gray-900 dark:text-gray-100">
-                    ₹<AnimatedCounter end={22000} className="inline" />
+                    ₹<AnimatedCounter end={22000} className="inline" /> / $
+                    <AnimatedCounter end={259} className="inline" />
                   </div>
                   <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">One-time payment</div>
                   <ul className="mt-6 space-y-3">
@@ -400,7 +401,7 @@ export default function Home() {
                 <CardFooter>
                   <WhatsAppButton
                     phoneNumber="+917807803780"
-                    message="Hi! I'm interested in your Basic Website package for ₹22,000. Can we discuss the details?"
+                    message="Hi! I'm interested in your Basic Website package for ₹22,000 / $259. Can we discuss the details?"
                     className="w-full rounded-full text-white"
                   >
                     Start Now
@@ -423,7 +424,8 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="flex-1">
                   <div className="text-4xl font-bold text-gray-900 dark:text-gray-100">
-                    ₹<AnimatedCounter end={40000} className="inline" />
+                    ₹<AnimatedCounter end={40000} className="inline" /> / $
+                    <AnimatedCounter end={471} className="inline" />
                   </div>
                   <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">One-time payment</div>
                   <ul className="mt-6 space-y-3">
@@ -453,7 +455,7 @@ export default function Home() {
                   <Button
                     onClick={() => {
                       const message =
-                        "Hi! I'm interested in your Standard Website package for ₹40,000. Can we discuss the details?"
+                        "Hi! I'm interested in your Standard Website package for ₹40,000 / $471. Can we discuss the details?"
                       const whatsappUrl = `https://wa.me/917807803780?text=${encodeURIComponent(message)}`
                       window.open(whatsappUrl, "_blank")
                     }}
@@ -475,7 +477,8 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="flex-1">
                   <div className="text-4xl font-bold text-gray-900 dark:text-gray-100">
-                    ₹<AnimatedCounter end={55000} className="inline" />
+                    ₹<AnimatedCounter end={55000} className="inline" /> / $
+                    <AnimatedCounter end={647} className="inline" />
                   </div>
                   <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">One-time payment</div>
                   <ul className="mt-6 space-y-3">
@@ -508,7 +511,7 @@ export default function Home() {
                 <CardFooter>
                   <WhatsAppButton
                     phoneNumber="+917807803780"
-                    message="Hi! I'm interested in your Premium Website package for ₹55,000. Can we discuss the details?"
+                    message="Hi! I'm interested in your Premium Website package for ₹55,000 / $647. Can we discuss the details?"
                     className="w-full rounded-full text-white"
                   >
                     Start Now
