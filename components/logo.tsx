@@ -11,7 +11,7 @@ export function Logo({ isScrolled = false }: LogoProps) {
     <Link href="/" className="flex items-center group">
       <div
         className={cn(
-          "relative h-24 w-24 overflow-hidden rounded-xl transition-all duration-300 ease-in-out",
+          "relative h-16 w-28 overflow-hidden rounded-lg transition-all duration-300 ease-in-out",
           "bg-white dark:bg-gray-800 group-hover:shadow-2xl group-hover:shadow-gray-500/25",
           "group-hover:scale-110 group-hover:rotate-3 shadow-xl border border-gray-200 dark:border-gray-700",
           "group-hover:animate-pulse",
@@ -23,9 +23,9 @@ export function Logo({ isScrolled = false }: LogoProps) {
           <Image
             src="/weblistt-logo.png"
             alt="WebListt Logo"
-            width={80}
-            height={80}
-            className="h-20 w-20 object-contain drop-shadow-lg transition-transform duration-300 group-hover:-rotate-2"
+            width={88}
+            height={48}
+            className="h-12 w-24 object-cover object-center drop-shadow-lg transition-transform duration-300 group-hover:-rotate-2"
           />
         </div>
       </div>
