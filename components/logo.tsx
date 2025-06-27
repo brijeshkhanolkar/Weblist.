@@ -11,8 +11,9 @@ export function Logo({ isScrolled = false }: LogoProps) {
     <Link href="/" className="flex items-center gap-2 group">
       <div
         className={cn(
-          "relative h-10 w-10 overflow-hidden rounded-lg transition-all duration-300 ease-in-out",
-          "bg-gradient-to-br from-blue-500 to-blue-700 group-hover:shadow-lg",
+          "relative h-14 w-14 overflow-hidden rounded-lg transition-all duration-300 ease-in-out",
+          "bg-gradient-to-br from-blue-500 to-blue-700 group-hover:shadow-xl group-hover:shadow-blue-500/25",
+          "group-hover:scale-110 shadow-lg",
           isScrolled ? "scale-90" : "scale-100",
         )}
       >
@@ -21,15 +22,11 @@ export function Logo({ isScrolled = false }: LogoProps) {
           <Image
             src="/weblistt-logo.png"
             alt="WebListt Logo"
-            width={32}
-            height={32}
-            className="h-8 w-8 object-contain"
+            width={48}
+            height={48}
+            className="h-12 w-12 object-contain drop-shadow-sm"
           />
         </div>
-      </div>
-      <div className={cn("font-bold transition-all duration-300", isScrolled ? "text-lg" : "text-xl")}>
-        <span className="text-blue-600 dark:text-blue-400">WebList</span>
-        
       </div>
     </Link>
   )
