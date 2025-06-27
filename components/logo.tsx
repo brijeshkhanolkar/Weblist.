@@ -29,14 +29,7 @@ export function Logo({ isScrolled = false }: LogoProps) {
       </div>
       <div className={cn("font-bold transition-all duration-300", isScrolled ? "text-lg" : "text-xl")}>
         <span className="text-blue-600 dark:text-blue-400">WebList</span>
-        <span
-          className={cn(
-            "text-cyan-500 dark:text-cyan-400",
-            isScrolled ? "text-gray-800 dark:text-gray-200" : "text-white",
-          )}
-        >
-          T
-        </span>
+        
       </div>
     </Link>
   )

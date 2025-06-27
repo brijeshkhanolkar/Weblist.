@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -23,6 +25,51 @@ export default function Home() {
       <section className="w-full pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-48 lg:pb-36 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 dark:from-blue-800 dark:via-blue-900 dark:to-gray-900 text-white overflow-hidden relative">
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:20px_20px]"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-blue-600/0 via-blue-700/0 to-blue-800 dark:to-gray-900"></div>
+        {/* Falling Stars Animation */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {Array.from({ length: 20 }).map((_, i) => (
+            <div
+              key={`star-${i}`}
+              className="absolute text-white/30 animate-pulse"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `-20px`,
+                fontSize: `${Math.random() * 8 + 8}px`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${3 + Math.random() * 4}s`,
+              }}
+            >
+              <div
+                className="animate-bounce"
+                style={{
+                  animation: `fallingStar ${3 + Math.random() * 4}s linear infinite`,
+                  animationDelay: `${Math.random() * 5}s`,
+                }}
+              >
+                ⭐
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <style jsx>{`
+          @keyframes fallingStar {
+            0% {
+              transform: translateY(-100vh) rotate(0deg);
+              opacity: 0;
+            }
+            10% {
+              opacity: 1;
+            }
+            90% {
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(100vh) rotate(360deg);
+              opacity: 0;
+            }
+          }
+        `}</style>
         <div className="container px-4 md:px-6 relative">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="flex flex-col justify-center space-y-4">
@@ -524,7 +571,11 @@ export default function Home() {
                       animation="fadeIn"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
-                      <Button variant="outline" size="sm" className="text-white border-white hover:bg-white/20">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="text-white border-white hover:bg-white/20 bg-transparent"
+                      >
                         View Project
                       </Button>
                     </div>
@@ -538,7 +589,7 @@ export default function Home() {
                   <CardFooter className="border-t border-gray-200 dark:border-gray-700 pt-4">
                     <Button
                       variant="outline"
-                      className="w-full rounded-full border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                      className="w-full rounded-full border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 bg-transparent"
                     >
                       View Demo
                     </Button>
@@ -557,7 +608,11 @@ export default function Home() {
                       animation="fadeIn"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
-                      <Button variant="outline" size="sm" className="text-white border-white hover:bg-white/20">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="text-white border-white hover:bg-white/20 bg-transparent"
+                      >
                         View Project
                       </Button>
                     </div>
@@ -571,7 +626,7 @@ export default function Home() {
                   <CardFooter className="border-t border-gray-200 dark:border-gray-700 pt-4">
                     <Button
                       variant="outline"
-                      className="w-full rounded-full border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                      className="w-full rounded-full border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 bg-transparent"
                     >
                       View Demo
                     </Button>
@@ -590,7 +645,11 @@ export default function Home() {
                       animation="fadeIn"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
-                      <Button variant="outline" size="sm" className="text-white border-white hover:bg-white/20">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="text-white border-white hover:bg-white/20 bg-transparent"
+                      >
                         View Project
                       </Button>
                     </div>
@@ -604,7 +663,7 @@ export default function Home() {
                   <CardFooter className="border-t border-gray-200 dark:border-gray-700 pt-4">
                     <Button
                       variant="outline"
-                      className="w-full rounded-full border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                      className="w-full rounded-full border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 bg-transparent"
                     >
                       View Demo
                     </Button>
@@ -625,7 +684,11 @@ export default function Home() {
                       animation="fadeIn"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
-                      <Button variant="outline" size="sm" className="text-white border-white hover:bg-white/20">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="text-white border-white hover:bg-white/20 bg-transparent"
+                      >
                         View Project
                       </Button>
                     </div>
@@ -639,7 +702,7 @@ export default function Home() {
                   <CardFooter className="border-t border-gray-200 dark:border-gray-700 pt-4">
                     <Button
                       variant="outline"
-                      className="w-full rounded-full border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                      className="w-full rounded-full border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 bg-transparent"
                     >
                       View Demo
                     </Button>
@@ -658,7 +721,11 @@ export default function Home() {
                       animation="fadeIn"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
-                      <Button variant="outline" size="sm" className="text-white border-white hover:bg-white/20">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="text-white border-white hover:bg-white/20 bg-transparent"
+                      >
                         View Project
                       </Button>
                     </div>
@@ -672,7 +739,7 @@ export default function Home() {
                   <CardFooter className="border-t border-gray-200 dark:border-gray-700 pt-4">
                     <Button
                       variant="outline"
-                      className="w-full rounded-full border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                      className="w-full rounded-full border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 bg-transparent"
                     >
                       View Demo
                     </Button>
@@ -693,7 +760,11 @@ export default function Home() {
                       animation="fadeIn"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
-                      <Button variant="outline" size="sm" className="text-white border-white hover:bg-white/20">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="text-white border-white hover:bg-white/20 bg-transparent"
+                      >
                         View Project
                       </Button>
                     </div>
@@ -707,7 +778,7 @@ export default function Home() {
                   <CardFooter className="border-t border-gray-200 dark:border-gray-700 pt-4">
                     <Button
                       variant="outline"
-                      className="w-full rounded-full border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                      className="w-full rounded-full border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 bg-transparent"
                     >
                       View Demo
                     </Button>
@@ -758,7 +829,7 @@ export default function Home() {
                   About Us
                 </div>
                 <AnimatedText
-                  text="Why Choose Me"
+                  text="Why Choose Us"
                   tag="h2"
                   className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-900 dark:text-gray-100"
                 />
@@ -917,7 +988,7 @@ export default function Home() {
                       animation="scale"
                     />
                     <div>
-                      <CardTitle className="text-gray-900 dark:text-gray-100">Anjali Desai</CardTitle>
+                      <CardTitle className="text-gray-900 dark:text-gray-100">Aishwarya Mohanraj</CardTitle>
                       <CardDescription className="text-gray-600 dark:text-gray-400">Glamour Salon</CardDescription>
                     </div>
                   </div>
