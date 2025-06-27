@@ -451,9 +451,10 @@ export default function Home() {
                 </CardContent>
                 <CardFooter>
                   <WhatsAppButton
-                    phoneNumber="+917807803780"
+                    phoneNumber="917807803780"
                     message="Hi! I'm interested in your Standard Website package for ₹40,000. Can we discuss the details?"
-                    className="w-full bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 rounded-full text-white"
+                    className="w-full bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 rounded-full text-white border-0"
+                    size="default"
                   >
                     Start Now
                   </WhatsAppButton>
