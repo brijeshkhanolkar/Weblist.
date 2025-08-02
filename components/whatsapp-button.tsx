@@ -40,15 +40,20 @@ export function WhatsAppButton({
   }
 
   return (
-    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex">
-      <Button className={cn("bg-green-500 hover:bg-green-600", className)} {...props}>
-        {children || (
-          <>
-            <MessageCircle className="mr-2 h-4 w-4" />
-            Chat on WhatsApp
-          </>
-        )}
-      </Button>
-    </a>
+    <Button
+      as="a"
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cn("bg-green-500 hover:bg-green-600", className)}
+      {...props}
+    >
+      {children || (
+        <>
+          <MessageCircle className="mr-2 h-4 w-4" />
+          Chat on WhatsApp
+        </>
+      )}
+    </Button>
   )
 }

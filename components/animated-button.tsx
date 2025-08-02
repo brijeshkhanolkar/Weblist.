@@ -29,8 +29,8 @@ export function AnimatedButton({
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <Button className={className} {...props} asChild>
-        <a href="#contact">Get Your Website Now</a>
+      <Button className={className} {...props}>
+        {children}
       </Button>
     </motion.div>
   )
